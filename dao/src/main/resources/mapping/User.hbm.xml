@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+    <class name="by.pvt.predkel.entities.User" table="User">
+        <id name="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+        <bag name="building" cascade="all" lazy="true">
+            <key column="userId"/>
+            <one-to-many class="by.pvt.predkel.entities.Building"/>
+        </bag>
+        <property name="login" type="java.lang.String"/>
+        <property name="password" type="java.lang.String"/>
+
+        <property name="accessLevelType">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">by.pvt.predkel.entities.access.AccessLevelType</param>
+                <param name="type">12</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+
+    </class>
+</hibernate-mapping>

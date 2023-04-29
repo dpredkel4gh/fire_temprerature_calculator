@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!-- HOME PAGE TEMPLATE-->
+    <definition name="home_template" template="/WEB-INF/views/layouts/home_layout.jspx">
+        <put-attribute name="title" value="login.authorization"/>
+        <put-attribute name="body" value="/WEB-INF/views/home/main.jspx"/>
+    </definition>
+
+    <!-- HOME PAGE -->
+    <definition name="home" extends="home_template"/>
+
+    <!-- USER'S PAGES TEMPLATE -->
+    <definition name="default" template="/WEB-INF/views/layouts/default_layout.jspx">
+        <put-attribute name="title"/>
+        <!--<put-attribute name="header" value="/WEB-INF/views/common/header.jspx"/>-->
+        <put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+        <put-attribute name="body"/>
+    </definition>
+
+    <!-- ADMIN PAGES -->
+    <definition name="admin/registration" extends="default">
+        <put-attribute name="title" value="registration"/>
+        <put-attribute name="body" value="/WEB-INF/views/moder/registration.jspx"/>
+    </definition>
+
+    <definition name="admin/materials" extends="default">
+        <put-attribute name="title" value="material"/>
+        <!--<put-attribute name="body" value="/WEB-INF/views/admin/substances.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/views/admin/substances.jsp"/>
+    </definition>
+
+    <!-- CLIENT PAGES -->
+    <definition name="client/main" extends="default">
+        <put-attribute name="title" value="functions"/>
+        <put-attribute name="body" value="/WEB-INF/views/client/functions.jsp"/>
+        <!--<put-attribute name="body" value="/WEB-INF/views/client/main.jspx"/>-->
+    </definition>
+
+    <definition name="client/calculate" extends="default">
+        <put-attribute name="title" value="calculate"/>
+        <!--<put-attribute name="body" value="/WEB-INF/views/client/calculate.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/views/client/calculate.jsp"/>
+    </definition>
+
+    <definition name="client/recalculate" extends="default">
+        <put-attribute name="title" value="calculate"/>
+        <put-attribute name="body" value="/WEB-INF/views/client/recalculate.jsp"/>
+    </definition>
+
+    <definition name="client/result" extends="default">
+        <put-attribute name="title" value="result"/>
+        <!--<put-attribute name="body" value="/WEB-INF/views/client/result.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/views/client/result.jsp"/>
+    </definition>
+
+    <definition name="client/history" extends="default">
+        <put-attribute name="title" value="history"/>
+        <!--<put-attribute name="body" value="/WEB-INF/views/client/history.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/views/client/history.jsp"/>
+    </definition>
+
+    <!-- ERROR PAGE -->
+    <definition name="error/error" extends="default">
+        <put-attribute name="title" value="page.error.title"/>
+        <put-attribute name="body" value="/WEB-INF/views/errors/error.jspx"/>
+    </definition>
+
+    <!-- HELP PAGE -->
+    <definition name="client/help" extends="default">
+        <put-attribute name="title" value="page.error.title"/>
+        <put-attribute name="body" value="/WEB-INF/views/info/info.jspx"/>
+    </definition>
+
+</tiles-definitions>
+

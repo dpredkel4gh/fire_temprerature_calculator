@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+    <class name="by.pvt.predkel.entities.options.CommonParameters" table="CommonParameters">
+        <id name="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+        <property name="positionOfRoom" type="java.lang.String"/>
+        <property name="nameOfRoom" type="java.lang.String"/>
+        <property name="square" type="java.lang.Double"/>
+        <property name="height" type="java.lang.Double"/>
+        <property name="perimeter" type="java.lang.Double"/>
+        <property name="volume" type="java.lang.Double"/>
+        <property name="squareOfConstruction" type="java.lang.Double"/>
+    </class>
+</hibernate-mapping>

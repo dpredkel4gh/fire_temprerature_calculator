@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+    <class name="by.pvt.predkel.entities.options.ParametersCalculatedFireLoad"
+           table="ParametersCalculatedFireLoad">
+        <id name="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+        <property name="specificFireLoad" type="java.lang.Double"/>
+        <property name="specificFireLoadZVEZDOCHKA" type="java.lang.Double"/>
+        <property name="reducedHeightOfApertures" type="java.lang.Double"/>
+        <property name="generalSquareOfApertures" type="java.lang.Double"/>
+        <property name="ventilationParameter" type="java.lang.Double"/>
+        <property name="coefficientK" type="java.lang.Double"/>
+        <property name="coefficientA" type="java.lang.Double"/>
+        <property name="coefficientB" type="java.lang.Double"/>
+        <property name="coefficientS" type="java.lang.Double"/>
+        <property name="estimatedFireLoad" type="java.lang.Double"/>
+    </class>
+</hibernate-mapping>

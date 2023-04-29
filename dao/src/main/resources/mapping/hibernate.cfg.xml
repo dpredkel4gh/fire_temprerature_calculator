@@ -1,0 +1,39 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<!DOCTYPE hibernate-configuration PUBLIC-->
+<!--"-//Hibernate/Hibernate Configuration DTD 3.0//EN"-->
+<!--"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">-->
+<!--<hibernate-configuration>-->
+<!--<session-factory>-->
+
+<!--&lt;!&ndash;<property name="hibernate.c3p0.min_size">5</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.c3p0.max_size">20</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.c3p0.timeout">300</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.c3p0.max_statements">50</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.c3p0.idle_test_period">30000</property>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.current_session_context_class">thread</property>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<property name="show_sql">true</property>&ndash;&gt;-->
+
+<!--&lt;!&ndash;конфиги для базы на mycloud&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.connection.url">jdbc:mysql://mysql35986-engin.mycloud.by/jelastic?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.connection.username">jelastic</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.connection.password">jelastic</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.hbm2ddl.auto">create-drop</property>&ndash;&gt;-->
+
+<!--&lt;!&ndash;конфиги для базы на heroku&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.connection.url">jdbc:mysql://eu-cdbr-west-01.cleardb.com/heroku_7bf5528ea5538f5?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;reconnect=true</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.connection.username">b9df0de4f43775</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.connection.password">4f1d2c74</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.hbm2ddl.auto">create-drop</property>&ndash;&gt;-->
+
+<!--&lt;!&ndash;конфиги для локальной базы&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.connection.url">jdbc:mysql://localhost/test?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.connection.username">root</property>&ndash;&gt;-->
+<!--&lt;!&ndash;<property name="hibernate.connection.password">1234</property>&ndash;&gt;-->
+<!--<property name="hibernate.hbm2ddl.auto">create-drop</property>-->
+
+<!--</session-factory>-->
+<!--</hibernate-configuration>-->

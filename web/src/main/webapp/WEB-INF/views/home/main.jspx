@@ -1,0 +1,49 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:s="http://www.springframework.org/tags"
+          xmlns="http://www.w3.org/1999/xhtml"
+          version="2.0">
+
+    <div class="modal-dialog" style="margin-top: 10%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="col-md-12 center-block">
+                    <s:message var="formName" code="login.authorization"/>
+                    <h1 class="text-center">${formName}</h1>
+                </div>
+            </div>
+            <div class="modal-body">
+                <s:url value="/login" var="authUrl"/>
+                <form class="col-md-12 center-block" action="${authUrl}" method="post">
+                    <input type="hidden" name="command" value="login"/>
+                    <div class="form-group">
+
+                        <s:message var="inputLogin" code="login.login"/>
+                        <input type="text" class="form-control input-lg" id="login" name="login"
+                               placeholder="${inputLogin}"/>
+
+                    </div>
+                    <div class="form-group">
+
+                        <s:message var="inputPassword" code="login.password"/>
+                        <input type="password" class="form-control input-lg" id="password" name="password"
+                               placeholder="${inputPassword}"/>
+
+                    </div>
+                    <div class="form-group">
+
+                        <!--<input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}"><jsp:text/></input>-->
+
+                        <s:message var="buttonName" code="login.signIn"/>
+                        <input type="submit" class="btn btn-block btn-lg btn-primary" value="${buttonName}"/>
+
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                        <h3>${error}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</jsp:root>

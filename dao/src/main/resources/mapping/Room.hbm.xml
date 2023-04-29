@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+    <class name="by.pvt.predkel.entities.Room" table="Room">
+        <id name="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+
+        <bag name="aperture" cascade="all" lazy="false">
+            <key column="roomId"/>
+            <one-to-many class="by.pvt.predkel.entities.Aperture"/>
+        </bag>
+
+        <list name="coefficientSForRoom" table="coefficientSForRoom" cascade="all" lazy="false">
+            <key column="roomId"/>
+            <list-index column="position"/>
+            <element type="java.lang.Double" column="coefficient"/>
+        </list>
+        <bag name="substanceOfRoom" cascade="all" lazy="false">
+            <key column="roomId"/>
+            <one-to-many class="by.pvt.predkel.entities.SubstanceOfRoom"/>
+        </bag>
+
+        <many-to-one name="commonParameters" column="commonParameters"
+                     class="by.pvt.predkel.entities.options.CommonParameters"
+                     not-null="true" cascade="all" lazy="false"/>
+        <many-to-one name="determineTheTypeOfFire" column="determineTheTypeOfFire"
+                     class="by.pvt.predkel.entities.options.DetermineTheTypeOfFire"
+                     not-null="true" cascade="all" lazy="false"/>
+        <many-to-one name="integratedThermalAndTechnicalParameters" column="integratedThermalAndTechnicalParameters"
+                     class="by.pvt.predkel.entities.options.IntegratedThermalAndTechnicalParameters"
+                     not-null="true" cascade="all" lazy="false"/>
+        <many-to-one name="parametersCalculatedFireLoad" column="parametersCalculatedFireLoad"
+                     class="by.pvt.predkel.entities.options.ParametersCalculatedFireLoad"
+                     not-null="true" cascade="all" lazy="false"/>
+
+        <list name="changeInMeanBulkTemperature" table="changeInMeanBulkTemperature" cascade="all" lazy="false">
+            <key column="roomId"/>
+            <list-index column="minute"/>
+            <element type="java.lang.Double" column="temperature"/>
+        </list>
+        <list name="changeInTemperatureOfSlab" table="changeInTemperatureOfSlab" cascade="all" lazy="false">
+            <key column="roomId"/>
+            <list-index column="minute"/>
+            <element type="java.lang.Double" column="temperature"/>
+        </list>
+        <list name="changeInTemperatureOfWalls" table="changeInTemperatureOfWalls" cascade="all" lazy="false">
+            <key column="roomId"/>
+            <list-index column="minute"/>
+            <element type="java.lang.Double" column="temperature"/>
+        </list>
+
+    </class>
+</hibernate-mapping>

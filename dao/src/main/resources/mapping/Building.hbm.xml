@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+    <class name="by.pvt.predkel.entities.Building" table="Building" lazy="false">
+        <id name="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+        <list name="coefficientSForBuild" table="coefficientSForBuild" cascade="all" lazy="false">
+            <key column="buildingId"/>
+            <list-index column="position"/>
+            <element type="java.lang.Double" column="coefficient" not-null="true"/>
+        </list>
+
+        <property name="nameOfBuilding" type="java.lang.String"/>
+        <property name="selectedTemperatureOfRegion" type="java.lang.Double"/>
+        <property name="specifyingCoefficientS5" type="java.lang.Double"/>
+        <property name="dateOfBuilding" type="java.lang.String"/>
+        <property name="userId"/>
+
+        <bag name="room" cascade="all all-delete-orphan" lazy="false">
+            <key column="buildingId"/>
+            <one-to-many class="by.pvt.predkel.entities.Room"/>
+        </bag>
+
+        <many-to-one name="user" column="userId"
+                     class="by.pvt.predkel.entities.User"
+                     not-null="true" cascade="none" lazy="false" insert="false" update="false"/>
+    </class>
+</hibernate-mapping>
